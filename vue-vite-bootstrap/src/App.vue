@@ -35,7 +35,7 @@ export default {
         const response = await axios.post("https://apiv1-phi.vercel.app/set", {
           value: newValue,
         });
-        this.currentValue = response.data.value;
+        this.fetchCurrentValue();
       } catch (error) {
         console.error("Error toggling value:", error);
       }
