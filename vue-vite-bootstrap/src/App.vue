@@ -23,7 +23,7 @@ export default {
   methods: {
     async fetchCurrentValue() {
       try {
-        const response = await axios.get("/");
+        const response = await axios.get("https://apiv1-phi.vercel.app/");
         this.currentValue = response.data.access;
       } catch (error) {
         console.error("Error fetching current value:", error);
@@ -32,7 +32,7 @@ export default {
     async toggleValue() {
       try {
         const newValue = this.currentValue === 1 ? 0 : 1;
-        const response = await axios.post("/set", {
+        const response = await axios.post("https://apiv1-phi.vercel.app/set", {
           value: newValue,
         });
         this.currentValue = response.data.value;
