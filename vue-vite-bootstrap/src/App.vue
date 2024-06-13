@@ -23,7 +23,7 @@ export default {
   methods: {
     async fetchCurrentValue() {
       try {
-        const response = await axios.get("/api/");
+        const response = await axios.get("/");
         this.currentValue = response.data.access;
       } catch (error) {
         console.error("Error fetching current value:", error);
@@ -32,7 +32,7 @@ export default {
     async toggleValue() {
       try {
         const newValue = this.currentValue === 1 ? 0 : 1;
-        const response = await axios.post("/api/set", {
+        const response = await axios.post("/set", {
           value: newValue,
         });
         this.currentValue = response.data.value;

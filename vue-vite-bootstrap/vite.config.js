@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [vue()],
   server: {
     proxy: {
-      "/api": {
+      "/": {
         target: "https://apiv1-phi.vercel.app",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ""),
+        rewrite: (path) => path,
       },
     },
   },
